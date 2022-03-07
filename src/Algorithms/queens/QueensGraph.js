@@ -54,6 +54,7 @@ export default class QueensGraph {
             value: 1,
             atributes: { position: { x: 0, y: i } },
             children: [],
+            path: [{ x: 0, y: i }],
           },
           parentQueensPositions: [],
         }),
@@ -90,6 +91,7 @@ export default class QueensGraph {
           value: node.value + 1,
           atributes: { position: { x: nodeColumn, y: i } },
           children: [],
+          path: [...node.path, { x: nodeColumn, y: i }],
         };
         let newParentQueensPositions = [
           ...parentQueensPositions,
